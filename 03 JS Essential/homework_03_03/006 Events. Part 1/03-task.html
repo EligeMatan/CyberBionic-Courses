@@ -12,6 +12,10 @@
             color: red;
             display: none;
         }
+
+        .error-field {
+            border: 1px red solid;
+        }
     </style>
 </head>
 
@@ -74,8 +78,11 @@
         });
 
         resetBtn.addEventListener("click", function () {
-            input1.value = '';
-            input2.value = '';
+            input1.value = 0;
+            input2.value = 0;
+            // мабуть, логічніше було б тут не 0, а '':
+            // input1.value = '';
+            // input2.value = '';
         });
     </script>
 </body>
