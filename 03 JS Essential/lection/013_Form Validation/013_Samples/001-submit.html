@@ -36,7 +36,7 @@
             alert("Подія submit");
 
             // Якщо поле введення порожнє, не надсилаємо форму.
-            if(form.search.value.length == 0) {
+            if(form.search.value.length == 0) {                             // краще перевіряти не довжину, а value:    if(form.search.value.trim())) {
                 event.preventDefault(); // Скасування відправлення форми.
             }
         });

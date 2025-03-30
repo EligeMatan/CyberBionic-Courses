@@ -48,11 +48,19 @@
         const form = document.forms[0];
 
         form.field1.addEventListener("input", function () {
-            console.log("Подія input - " + form.field1.value);
+            console.log("Подія input - " + form.field1.value); // обробляє кожен символ
         });
 
         form.field2.addEventListener("change", function () {
             console.log("Подія change - " + form.field2.value);
+        });
+
+        form.field2.addEventListener("focus", function () {
+            console.log("Подія focus - " + form.field2.value);
+        });
+
+        form.field2.addEventListener("blur", function () {
+            console.log("Подія blur - " + form.field2.value);
         });
 
         form.field3.addEventListener("cut", function (e) {
