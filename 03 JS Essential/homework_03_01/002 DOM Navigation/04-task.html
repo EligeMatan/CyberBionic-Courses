@@ -64,6 +64,29 @@
         Якщо в другій комірці значення більше за 100, рядок має зображуватися зеленим кольором, якщо значення менше за 100, то зображується червоним.
         Для зміни кольору рядка використовуйте код row.style.backgroundColor = "колір".
         */
+        let table = document.querySelector('#statsTable');
+
+        table.querySelectorAll('tr').forEach(row => {
+            let sec_cell_value = Number(row.querySelectorAll('td')[1].innerHTML);
+            
+            //#region - ця логіка справедлива, якщо умова саме така, як вище
+            // if (sec_cell_value > 100) {
+            //     row.style.backgroundColor = 'green';
+            // } else if (sec_cell_value < 100) {
+            //     row.style.backgroundColor = 'red';
+            // } else {
+            //     row.style.backgroundColor = 'rgb(157, 163, 255)';
+            // }
+            //#endregion
+
+            //#region - напевно це малося на увазі
+            if (sec_cell_value >= 100) {
+                row.style.backgroundColor = 'green';
+            } else {
+                row.style.backgroundColor = 'red';
+            }
+            //#endregion
+        });
     </script>
 </body>
 

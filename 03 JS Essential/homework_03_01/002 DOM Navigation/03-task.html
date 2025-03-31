@@ -66,7 +66,7 @@
     </table>
 
     <div id="result"></div>
-    p*10{$}
+    <!-- p*10{$} -->
 
 
     <script>
@@ -78,19 +78,24 @@
         Використовуйте будь-які методи, які були розглянуті на попередніх уроках.
         */
        let table = document.querySelector('#statsTable');
-
-       let sumRow = table.insertAdjacentHTML('beforeend', 
-       `<tr class="summary">
-            <td><b>Разом</b></td>
-            <td></td>
-            <td></td>
-        </tr>`);
         
         // let tds = table.querySelector('.summary').querySelectorAll('td');
 
-        let rows = table.querySelectorAll('tr').forEach(row => {
-            row.querySelectorAll('')
+        let sum1 = 0;
+        let sum2 = 0;
+
+        table.querySelectorAll('tr:not(:first-child)').forEach(row => {
+            let cells = row.querySelectorAll('td');
+            sum1 += Number(cells[1].innerHTML) || 0;
+            sum2 += Number(cells[2].innerHTML) || 0;
         });
+
+        let sumRow = table.insertAdjacentHTML('beforeend', 
+       `<tr class="summary">
+            <td><b>Разом</b></td>
+            <td>${sum1}</td>
+            <td>${sum2}</td>
+        </tr>`);
     </script>
 </body>
 </html>

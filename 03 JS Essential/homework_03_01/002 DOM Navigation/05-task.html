@@ -496,7 +496,7 @@
             }
 
             function showHigestFriendCount() {
-                console.log("Користувачі з найбільшою кількістю друзів");
+                // console.log("Користувачі з найбільшою кількістю друзів");
                 let res = '';
                 let max = Number.MIN_VALUE;
 
@@ -532,7 +532,7 @@
                     // .forEach(user => console.log(user.company));
                     .forEach(user => document.querySelector('#greatestBalanceCompanyOutput').innerHTML = user.company);
 
-                console.log("Компанії користувачів із найменшим балансом:")
+                // console.log("Компанії користувачів із найменшим балансом:")
                 users
                     .filter(user => user.balance == minBalance)
                     // .forEach(user => console.log(user.company));
