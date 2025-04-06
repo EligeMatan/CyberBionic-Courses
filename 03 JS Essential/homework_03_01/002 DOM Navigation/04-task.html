@@ -53,8 +53,8 @@
             <td>100</td>
         </tr>
         <tr>
-            <th>Всього</th>
-            <th id="output"></th>
+            <td>Всього</td>
+            <td id="output"></td>
         </tr>
     </table>
     <script>
@@ -66,7 +66,11 @@
         */
         let table = document.querySelector('#statsTable');
 
-        table.querySelectorAll('tr').forEach(row => {
+        let rowsAll = table.querySelectorAll('tr');
+        rowsAll.forEach((row, id) => {
+            if (id === rowsAll.length - 1)
+                return;
+
             let sec_cell_value = Number(row.querySelectorAll('td')[1].innerHTML);
             
             //#region - ця логіка справедлива, якщо умова саме така, як вище
@@ -79,6 +83,7 @@
             // }
             //#endregion
 
+            if (id < table.querySelectorAll('tr').length) {
             //#region - напевно це малося на увазі
             if (sec_cell_value >= 100) {
                 row.style.backgroundColor = 'green';
@@ -86,7 +91,20 @@
                 row.style.backgroundColor = 'red';
             }
             //#endregion
+            }
         });
+
+        // Напевно, треба і порахувати суму ?
+        let sum = 0;
+
+        table.querySelectorAll('tr:not(:last-child)').forEach(row => {
+            let cells = row.querySelectorAll('td');
+            console.log(cells[1].innerHTML);
+
+            sum += Number(cells[1].innerHTML) || 0;
+        });
+
+        table.querySelector('#output').innerHTML = sum;
     </script>
 </body>
 
