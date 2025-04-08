@@ -34,6 +34,7 @@
             ];
 
             // Чекаємо на завершення всіх промісів.
+            /* це звертання до методів класу Promise. Так само як і зверталися до методів класу Array */
             Promise.all(promises)
                 .then(resultArray => console.log(resultArray));
         });
