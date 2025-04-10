@@ -53,7 +53,13 @@
         function createP(label) {
             
         } 
-        days.forEach(day => )
+        days.forEach(day => {
+            if (day.isWorkDay) {
+                if (workingElement) workingElement.textContent += `${day.name}\n`;
+            } else {
+                if (weekendElement) weekendElement.textContent += `${day.name}\n`;
+            }
+        })
     </script>
 </body>
 
