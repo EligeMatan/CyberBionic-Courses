@@ -23,6 +23,31 @@
         Завдання:
         Порахуйте суму значень атрибутів data-value та my-attribute всіх елементів на поточній сторінці та зобразіть її користувачеві.
         */
+
+       function sumDataAttr(element, attr) {
+            let result = 0;
+            element.forEach(item => {
+                let value = Number(item.getAttribute(attr));
+
+                if(!isNaN(value)) {
+                    result += value;
+                }
+            })
+
+            return result;
+       }
+
+       let dataValue = document.querySelectorAll('[data-value]');
+       let myAttribute = document.querySelectorAll('[my-attribute]');
+
+       let totalDataValue = sumDataAttr(dataValue, 'data-value');
+       let totalMyAttribute = sumDataAttr(myAttribute, 'my-attribute');
+
+       let out = document.createElement('div');
+       out.insertAdjacentHTML("beforeend", `<p>Sum data-value:   ${totalDataValue}</p>`);
+       out.insertAdjacentHTML("beforeend", `<p>Sum my-attribute:   ${totalMyAttribute}</p>`);
+
+       document.body.append(out);
     </script>
 </body>
 

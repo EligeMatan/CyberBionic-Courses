@@ -64,8 +64,8 @@
         let table = document.createElement('table');
         
         for (const item of source) {
-            // table.insertAdjacentHTML('beforeend', `<tr><td>${item.month}</td><td>${item.amount}</td></tr>`);
-            ('beforeend', `<tr><td>${item.month}</td><td>${item.amount}</td></tr>`);
+            table.insertAdjacentHTML('beforeend', `<tr><td>${item.month}</td><td>${item.amount}</td></tr>`);
+            // ('beforeend', `<tr><td>${item.month}</td><td>${item.amount}</td></tr>`);
         }
 
         document.body.append(table);

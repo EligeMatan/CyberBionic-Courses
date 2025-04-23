@@ -29,6 +29,10 @@
         .user-card ul {
             list-style: none;
         }
+
+        .userless {
+            border: 2px red solid;
+        }
     </style>
 </head>
 
@@ -498,6 +502,7 @@
         
         users.forEach(user => {
             let card = createUserCard(user);
+            if (user.friends.length < 5) card.classList.add('userless');
             document.body.append(card);
         });
     </script>

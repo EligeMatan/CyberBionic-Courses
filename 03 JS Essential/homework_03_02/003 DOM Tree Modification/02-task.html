@@ -16,7 +16,7 @@
 <body>
     Робочі дні
     <div class="working" style="white-space: pre-line;"></div>
-
+    <br>
     Вихідні дні
     <div class="weekend" style="white-space: pre-line;"></div>
 
@@ -42,22 +42,14 @@
         { name: "Friday", isWorkDay: true },
         { name: "Saturday", isWorkDay: false }];
 
-        // for (const day of days) {
-        //     if (day.isWorkDay) {
-        //         if (workingElement) workingElement.textContent += `${day.name}\n`;
-        //     } else {
-        //         if (weekendElement) weekendElement.textContent += `${day.name}\n`;
-        //     }
-        // }
-
-        function createP(label) {
-            
-        } 
         days.forEach(day => {
+            let p = document.createElement('p');
+            p.textContent = day.name;
+
             if (day.isWorkDay) {
-                if (workingElement) workingElement.textContent += `${day.name}\n`;
+                if (workingElement) workingElement.append(p);
             } else {
-                if (weekendElement) weekendElement.textContent += `${day.name}\n`;
+                if (weekendElement) weekendElement.append(p);
             }
         })
     </script>
