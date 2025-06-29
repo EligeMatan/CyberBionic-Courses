@@ -20,8 +20,12 @@
         Напишіть сценарій, який видалить на сторінці елементи з атрибутом data-remove.
         */
 
-        let dataRemove = document.querySelectorAll('[data-remove]');
-        
+        const dataRemove = document.querySelectorAll('[data-remove]');
+
+        dataRemove.forEach( item => {
+            item.remove();
+        });
+
     </script>
 </body>
 
