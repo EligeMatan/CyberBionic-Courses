@@ -29,6 +29,18 @@
             age: "25",
         }
 
+        function writeAttr(obj, attrName = "data-bind") {
+            const elements = document.querySelectorAll(`[${attrName}]`);
+            elements.forEach(elem => {
+                const prop = elem.getAttribute(attrName);
+                if (prop in obj) {
+                    elem.textContent = obj[prop];
+                }
+            });
+        }
+
+        writeAttr(user);
+        
     </script>
 </body>
 
